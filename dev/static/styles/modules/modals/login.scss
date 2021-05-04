@@ -1,0 +1,117 @@
+.login-tabs {
+  &__links {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 0 30px 0;
+  }
+  &__link {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0 15px;
+    padding: 0;
+    transition: all ease-out 0.15s;
+    &:hover {
+      opacity: 0.8;
+    }
+    &._active {
+      border-bottom: 2px solid #ffa800;
+    }
+  }
+  &__content {
+    animation: fadeIn 0.5s;
+    display: none;
+    transition: max-height ease-out 0.15s, opacity ease-out 0.5s;
+    &._active {
+      display: block;
+    }
+  }
+  &__fields {
+    margin: 0 0 30px 0;
+  }
+  &__field {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 15px 0;
+    width: 100%;
+  }
+  &__box {
+    @media screen and (min-width: 768px) {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 -10px 15px;
+      > * {
+        margin: 0 10px;
+      }
+    }
+  }
+  &__label {
+    color: #7e7e7e;
+    font-size: 14px;
+    line-height: 14px;
+    margin: 0 0 5px 0;
+  }
+  &__input {
+    border: none;
+    border: 1px solid #e5e5e5;
+    border-radius: 30px;
+    font-size: 15px;
+    line-height: 1;
+    padding: 10px;
+    width: 100%;
+    &::placeholder {
+      opacity: 0.5;
+    }
+  }
+  &__button {
+    align-items: center;
+    background-color: #ffb933;
+    border: none;
+    border-radius: 30px;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: 10px 30px;
+    position: relative;
+    min-width: 50%;
+    width: auto;
+    span {
+      margin: 0 0 0 -10px;
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-right: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        transform: rotate(-45deg) translateY(-50%);
+        top: 50%;
+        right: -17px;
+      }
+    }
+  }
+  &__fail {
+    color: #fa7575;
+    font-size: 14px;
+    line-height: 16px;
+    margin: 15px 0 0 0;
+  }
+  &__captcha {
+    background: url("../images/common/captcha.jpg") no-repeat center;
+    background-size: cover;
+    border: 1px solid #ffb933;
+    border-radius: 10px;
+    height: 50px;
+    margin: 15px 0 0 0;
+    width: 100%;
+  }
+  &__note {
+    color: grey;
+    font-size: 12px;
+    line-height: 14px;
+    margin: 15px 0 0 0;
+  }
+}

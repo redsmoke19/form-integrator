@@ -1,0 +1,115 @@
+.popup {
+  -webkit-overflow-scrolling: touch;
+  z-index: 100;
+  padding: 0;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: visibility 0.8s ease 0s;
+  visibility: hidden;
+  &::before {
+    content: '';
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease 0s;
+  }
+  &.show {
+    visibility: visible;
+    overflow: auto;
+    &::before {
+      opacity: 1;
+    }
+    .popup__body {
+      transform: scale(1);
+    }
+  }
+  &._active {
+    overflow: auto;
+    visibility: visible;
+    &::before {
+      opacity: 1;
+    }
+    .popup__body {
+      transition: all 0.3s ease 0.2s;
+      transform: scale(1);
+    }
+  }
+  // .popup__content
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100%;
+    flex: 1 1 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and (min-width: $tablet-size) {
+      padding: 50px 0;
+    }
+  }
+  // .popup__body
+  &__body {
+    transform: scale(0);
+    transition: all 0.3s ease 0s;
+    background-color: #fff;
+    max-width: 590px;
+    padding: 60px 20px 30px 20px;
+    position: relative;
+    width: 100%;
+    @media screen and (min-width: $tablet-size) {
+      border-radius: 6px;
+      padding: 40px;
+
+    }
+  }
+  // .popup__close
+  &__close {
+    background: url("../images/common/close.png") no-repeat center;
+    cursor: pointer;
+    height: 30px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    transition: all ease-out 0.15s;
+    width: 30px;
+    z-index: 30;
+    @media screen and (min-width: $tablet-size) {
+      fill: $white;
+      height: 30px;
+      right: -15px;
+      top: -15px;
+      width: 30px;
+      .icon-close {
+        height: 14px;
+        width: 14px;
+      }
+    }
+    @media screen and (min-width: $desktop-size) {
+      transition: all ease-out 0.2s;
+      &:hover {
+        transform: scale(1.09);
+      }
+    }
+  }
+  &__title {
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 35px;
+    margin: 0 0 20px 0;
+  }
+  &__text {
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0 0 30px 0;
+    text-align: center;
+  }
+}

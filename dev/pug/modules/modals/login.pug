@@ -1,0 +1,53 @@
+.popup.login-form.popup_login-form
+	.popup__content
+		.popup__body
+			.popup__close.login-form__close
+			//- h2.popup__title Пройдите наше тестирование
+			p.popup__text Для доступа к разделу, зарегестрируйтесь или авторизуйтесь
+			.login-tabs
+				.login-tabs__links
+					button.login-tabs__link._active(data-tabsid='_login') #[strong Вход]
+					button.login-tabs__link(data-tabsid='_registration') #[strong Регистрация]
+				.login-tabs__wrapper
+					.login-tabs__content._login._active#login
+						form.login-tabs__form.login-tabs__form--enter(action="" method="post")
+							.login-tabs__fields
+								.login-tabs__field
+									label.login-tabs__label(for="enterLogin") Логин
+									input.login-tabs__input(type="tel" name="enterLogin" id="enterLogin" placeholder="Введите Ваш Логин")
+								.login-tabs__field
+									label.login-tabs__label(for="enterPassword") Пароль
+									input.login-tabs__input(type="password" id="enterPassword" name="enterPassword" placeholder="Введите пароль")
+								.login-tabs__field
+									input.login-tabs__checkbox.checkbox(type="checkbox" id="rememberOnPc" name="rememberOnPc")
+									label.label(for="rememberOnPc") Запомнить меня на этом компьютере
+								p.login-tabs__fail._error Телефон или пароль введен неправильно, пожалуйста попробуйте ещё раз
+							button.login-tabs__button(type="submit")
+								span Вход
+					.login-tabs__content._registration#registration
+						form.login-tabs__form.login-tabs__form--registration(action="" method="post")
+							.login-tabs__fields
+								.login-tabs__field._complete
+									label.login-tabs__label(for="regName") Логин (минимум 3 символа) *
+									input.login-tabs__input(type="text" name="regName" id="regName" placeholder="Логин")
+								.login-tabs__field
+									label.login-tabs__label(for="regName") Имя
+									input.login-tabs__input(type="text" id="regName" name="regName")
+								.login-tabs__box
+									.login-tabs__field
+										label.login-tabs__label(for="regPassword") Пароль *
+										input.login-tabs__input(type="password" id="regPassword" name="regPassword" placeholder="Введите пароль")
+									.login-tabs__field
+										label.login-tabs__label(for="regConfirmPassword") Подтверждение пароля *
+										input.login-tabs__input(type="password" id="regConfirmPassword" name="regConfirmPassword" placeholder="Введите пароль")
+								.login-tabs__field
+									label.login-tabs__label(for="regMail") Электронная почта
+									input.login-tabs__input(type="email" name="regMail" id="regMail" placeholder="example@mail.ru")
+								.login-tabs__field
+									label.login-tabs__label(for="regMail") Введите слово на картинке
+									input.login-tabs__input(type="text" name="regCaptch" id="regCaptch")
+									.login-tabs__captcha
+								p.login-tabs__fail._error Пароль должен быть не менее 8 символов длиной
+							button.login-tabs__button._active(type="submit")
+								span Зарегестрироваться
+						p.login-tabs__note * Поля, обязательные для заполнения.
